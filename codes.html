@@ -26,7 +26,8 @@
 <p>
 Mainly HID page 7, with additions to support internal features, media keys, and power keys.<br/>
 Codes in <i>italics</i> are used internally by the converter, and are not output.<br/>
-Codes with <span class="caution">highlight</span> are output, but may not be supported by all OS (notably Windows).<br/>
+Codes with <span class="caution">yellow highlight</span> are output, but may not be supported by all OS (notably Windows).<br/>
+Codes with <span class="macos">blue highlight</span> are macOS-specific HID code labels.<br/>
 Media and Power codes are translated to the correct code page before being output.<br/>
 </p>
 
@@ -101,6 +102,7 @@ Media and Power codes are translated to the correct code page before being outpu
 <tr><td>F9</td><td>0x42</td><td>F9</td></tr>
 <tr><td>F10</td><td>0x43</td><td>F10</td></tr>
 <tr><td>F11</td><td>0x44</td><td>F11</td></tr>
+<tr class="macos"><td>MACOS_VIEW_DESKTOP</td><td>0x44</td><td>macOS View Desktop</td></tr>
 <tr><td>F12</td><td>0x45</td><td>F12</td></tr>
 <tr><td>PRINTSCREEN</td><td>0x46</td><td>Print Screen</td></tr>
 <tr><td>SCROLL_LOCK</td><td>0x47</td><td>Scroll Lock</td></tr>
@@ -138,7 +140,9 @@ Media and Power codes are translated to the correct code page before being outpu
 <tr class="caution"><td>PAD_EQUALS</td><td>0x67</td><td>Keypad =</td></tr>
 <tr><td>F13</td><td>0x68</td><td>F13</td></tr>
 <tr><td>F14</td><td>0x69</td><td>F14</td></tr>
+<tr class="macos"><td>MACOS_BRIGHTNESS_DOWN</td><td>0x69</td><td>macOS Screen Brightness Down</td></tr>
 <tr><td>F15</td><td>0x6A</td><td>F15</td></tr>
+<tr class="macos"><td>MACOS_BRIGHTNESS_UP</td><td>0x6A</td><td>macOS Screen Brightness Up</td></tr>
 <tr><td>F16</td><td>0x6B</td><td>F16</td></tr>
 <tr><td>F17</td><td>0x6C</td><td>F17</td></tr>
 <tr><td>F18</td><td>0x6D</td><td>F18</td></tr>
@@ -160,8 +164,11 @@ Media and Power codes are translated to the correct code page before being outpu
 <tr class="caution"><td>PASTE</td><td>0x7D</td><td>Keyboard Paste</td></tr>
 <tr class="caution"><td>FIND</td><td>0x7E</td><td>Keyboard Find</td></tr>
 <tr class="caution"><td>MUTE</td><td>0x7F</td><td>Keyboard Mute</td></tr>
+<tr class="macos"><td>MACOS_VOLUME_MUTE</td><td>0x7F</td><td>macOS Volume Mute</td></tr>
 <tr class="caution"><td>VOLUME_UP</td><td>0x80</td><td>Keyboard Volume Up</td></tr>
+<tr class="macos"><td>MACOS_VOLUME_UP</td><td>0x80</td><td>macOS Volume Up</td></tr>
 <tr class="caution"><td>VOLUME_DOWN</td><td>0x81</td><td>Keyboard Volume Dn</td></tr>
+<tr class="macos"><td>MACOS_VOLUME_DOWN</td><td>0x81</td><td>macOS Volume Down</td></tr>
 <tr class="caution"><td>LOCKING_CAPS_LOCK</td><td>0x82</td><td>Keyboard Locking Caps Lock</td></tr>
 <tr class="caution"><td>LOCKING_NUM_LOCK</td><td>0x83</td><td>Keyboard Locking Num Lock</td></tr>
 <tr class="caution"><td>LOCKING_SCROLL_LOCK</td><td>0x84</td><td>Keyboard Locking Scroll Lock</td></tr>
@@ -198,6 +205,7 @@ Media and Power codes are translated to the correct code page before being outpu
 <tr class="caution"><td>CRSEL_PROPS</td><td>0xA3</td><td>Keyboard CrSel/Props</td></tr>
 <tr class="caution"><td>EXSEL</td><td>0xA4</td><td>Keyboard ExSel</td></tr>
 <tr><td>SYSTEM_POWER</td><td>0xA8</td><td>System Power</td></tr>
+<tr class="macos"><td>MACOS_POWER</td><td>0xA8</td><td>macOS System Power</td></tr>
 <tr><td>SYSTEM_SLEEP</td><td>0xA9</td><td>System Sleep</td></tr>
 <tr><td>SYSTEM_WAKE</td><td>0xAA</td><td>System Wake</td></tr>
 <tr><td><i>AUX1</i></td><td><i>0xAB</i></td><td><i>Auxiliary key 1</i></td></tr>
@@ -239,17 +247,28 @@ Media and Power codes are translated to the correct code page before being outpu
 <tr><td><i>SELECT_6</i></td><td><i>0xDE</i></td><td><i>Select 6 toggle</i></td></tr>
 <tr><td><i>SELECT_7</i></td><td><i>0xDF</i></td><td><i>Select 7 toggle</i></td></tr>
 <tr><td>LCTRL</td><td>0xE0</td><td>Left Control</td></tr>
+<tr class="macos"><td>MACOS_LCONTROL</td><td>0xE0</td><td>macOS Left Control</td></tr>
 <tr><td>LSHIFT</td><td>0xE1</td><td>Left Shift</td></tr>
+<tr class="macos"><td>MACOS_LSHIFT</td><td>0xE1</td><td>macOS Left Shift</td></tr>
 <tr><td>LALT</td><td>0xE2</td><td>Left Alt</td></tr>
+<tr class="macos"><td>MACOS_LOPTION</td><td>0xE2</td><td>macOS Left Alt/Option</td></tr>
 <tr><td>LGUI</td><td>0xE3</td><td>Left GUI (Left Windows)</td></tr>
+<tr class="macos"><td>MACOS_LCOMMAND</td><td>0xE3</td><td>macOS Left Command</td></tr>
 <tr><td>RCTRL</td><td>0xE4</td><td>Right Control</td></tr>
+<tr class="macos"><td>MACOS_RCONTROL</td><td>0xE4</td><td>macOS Right Command</td></tr>
 <tr><td>RSHIFT</td><td>0xE5</td><td>Right Shift</td></tr>
+<tr class="macos"><td>MACOS_RSHIFT</td><td>0xE5</td><td>macOS Right Shift</td></tr>
 <tr><td>RALT</td><td>0xE6</td><td>Right Alt</td></tr>
+<tr class="macos"><td>MACOS_ROPTION</td><td>0xE6</td><td>macOS Right Alt/Option</td></tr>
 <tr><td>RGUI</td><td>0xE7</td><td>Right GUI (Right Windows)</td></tr>
+<tr class="macos"><td>MACOS_RCOMMAND</td><td>0xE7</td><td>macOS Right Command</td></tr>
 <tr><td>MEDIA_NEXT_TRACK</td><td>0xE8</td><td>Scan Next Track</td></tr>
+<tr class="macos"><td>MACOS_NEXT_TRACK</td><td>0xE8</td><td>macOS Next Track</td></tr>
 <tr><td>MEDIA_PREV_TRACK</td><td>0xE9</td><td>Scan Previous Track</td></tr>
+<tr class="macos"><td>MACOS_PREV_TRACK</td><td>0xE9</td><td>macOS Previous Track</td></tr>
 <tr><td>MEDIA_STOP</td><td>0xEA</td><td>Stop</td></tr>
-<tr><td>MEDIA_PLAY_PAUSE</td><td>0xEB</td><td>Play/ Pause</td></tr>
+<tr><td>MEDIA_PLAY_PAUSE</td><td>0xEB</td><td>Play/Pause</td></tr>
+<tr class="macos"><td>MACOS_PLAY_PAUSE</dr><td>0xEB</td><td>macOS Play/Pause</td></td>
 <tr><td>MEDIA_MUTE</td><td>0xEC</td><td>Mute</td></tr>
 <tr><td>MEDIA_BASS_BOOST</td><td>0xED</td><td>Bass Boost</td></tr>
 <tr><td>MEDIA_LOUDNESS</td><td>0xEE</td><td>Loudness</td></tr>
@@ -316,17 +335,29 @@ Depending on context, a combination might mean 'any' or 'all' of the specified m
 <table>
 <tr><th>Name</th><th>Description</th></tr>
 <tr><td>LCTRL</td><td>Left Control</td></tr>
+<tr class="macos"><td>MACOS_LCONTROL</td><td>macOS Left Control</td></tr>
 <tr><td>LSHIFT</td><td>Left Shift</td></tr>
+<tr class="macos"><td>MACOS_LSHIFT</td><td>macOS Left Shift</td></tr>
 <tr><td>LALT</td><td>Left Alt</td></tr>
+<tr class="macos"><td>MACOS_LOPTION</td><td>macOS Left Alt/Option</td></tr>
 <tr><td>LGUI</td><td>Left GUI (Left Windows)</td></tr>
+<tr class="macos"><td>MACOS_LCOMMAND</td><td>macOS Left Command</td></tr>
 <tr><td>RCTRL</td><td>Right Control</td></tr>
+<tr class="macos"><td>MACOS_RCONTROL</td><td>macOS Right Control</td></tr>
 <tr><td>RSHIFT</td><td>Right Shift</td></tr>
+<tr class="macos"><td>MACOS_RSHIFT</td><td>macOS Right Shift</td></tr>
 <tr><td>RALT</td><td>Right Alt</td></tr>
+<tr class="macos"><td>MACOS_ROPTION</td><td>macOS Right Alt/Option</td></tr>
 <tr><td>RGUI</td><td>Right GUI (Right Windows)</td></tr>
+<tr class="macos"><td>MACOS_RCOMMAND</td><td>macOS Right Command</td></tr>
 <tr><td>CTRL</td><td>Either/Both Control (shorthand for LCTRL RCTRL)</td></tr>
+<tr class="macos"><td>MACOS_CONTROL</td><td>Either/Both macOS Control (shorthand for MACOS_LCONTROL MACOS_RCONTROL)</td></tr>
 <tr><td>SHIFT</td><td>Either/Both Shift (shorthand for LSHIFT RSHIFT)</td></tr>
+<tr class="macos"><td>MACOS_SHIFT</td><td>Either/Both macOS Shift (shorthand for MACOS_LSHIFT MACOS_RSHIFT)</td></tr>
 <tr><td>ALT</td><td>Either/Both Alt (shorthand for LALT RALT)</td></tr>
+<tr class="macos"><td>MACOS_OPTION</td><td>Either/Both macOS Option (shorthand for MACOS_LOPTION MACOS_ROPTION)</td></tr>
 <tr><td>GUI</td><td>Either/Both GUI (shorthand for LGUI RGUI)</td></tr>
+<tr class="macos"><td>MACOS_COMMAND</td><td>Either/Both macOS Command (shorthand for MACOS_LCOMMAND MACOS_RCOMMAND)</td></tr>
 <tr><td>ALL</td><td>Any/All (shorthand for CTRL SHIFT ALT GUI)</td></tr>
 </table>
 <hr>

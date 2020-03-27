@@ -74,6 +74,11 @@ table td
 	background-color: #FFFFA0;
 }
 
+.macos
+{
+	background-color: #5CD9FF;
+}
+
 p.breakhere {page-break-after: always}
 
 pre
